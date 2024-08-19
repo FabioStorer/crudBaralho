@@ -27,7 +27,7 @@ const show = id => db.find(el => el.id == id);
 
 const update = (id, body) => {
     const index = db.findIndex(el => el.id == id);
-    const novo = model(body, parseint(id));
+    const novo = model(body, parseInt(id));
 
     if (novo && index != -1) {
         db[index] = novo;
@@ -38,7 +38,7 @@ const update = (id, body) => {
 };
 
 const destroy = id => {
-    const index = findIndex(el => el.id == id);
+    const index = db.findIndex(el => el.id == id);
 
     if (index != -1) {
         db.splice(index, 1);
